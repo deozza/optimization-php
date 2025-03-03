@@ -10,6 +10,9 @@
 
         {% block javascripts %}
         {% endblock %}
+
+        <link rel="prefetch" href="{{ app.request.server.get('IPX_URL') ?? '//localhost:8889' }}">
+        <link rel="preconnect" href="{{ app.request.server.get('IPX_URL') ?? '//localhost:8889' }}">
     </head>
     <body>
         <main class="flex flex-row items-center justify-center w-full">
