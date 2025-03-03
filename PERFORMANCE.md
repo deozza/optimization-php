@@ -46,3 +46,9 @@ For the application itself, if the application is slow, the user will feel frust
 **In addition:**
 
 - I set up an IPX server. It allows to automatically serve images in `webp` format (or any specified format) and to resize them on the fly. This way, the client will always receive the best image format and size for his device. Thus, the size of the images is 221 KB (divided by 3334) for the initial page load.
+
+### *What could be done in the future to improve the performances again?*
+
+1. IPX is a temporary solution to serve optimized images quickly. In the future, we could use a CDN to cache the images and serve them even faster.
+2. Move the server closer to the users.
+3. Use Thumbhash to generate image placeholders. This way, the browser will show a placeholder while the image is loading and the user will have the impression that the website is faster.
