@@ -1,0 +1,82 @@
+-Analyse:
+
+--Petite parenthèse avant de commencer:
+
+J'ai eu beaucoup de problèmes pour initialiser le projet,
+j'ai donc dû notamment
+remplacer `RUN apt-get install libpq-dev psql -y`
+par `RUN apt-get install -y libpq-dev postgresql-client`
+
+puis faire
+`docker compose exec optimization-php bash
+apt-get update && apt-get install -y dos2unix
+dos2unix bin/console`
+pour pouvoir faire `docker compose exec optimization-php bin/console d:d:c`
+suite à un problème de conversion
+
+ensuite avec la base, j'ai des problèmes me disant
+qu'elle n'existait pas alors que je l'ai créé juste avant
+il me parle aussi de problèmes d'user qui n'existe pas
+j'ai donc ajouté `CREATE ROLE "user" WITH LOGIN PASSWORD 'password';
+GRANT ALL PRIVILEGES ON DATABASE guitareboissieres TO "user";`
+dans le fichier `app/var/db.sql`
+juste après quand je m'y reconnecte avec
+`psql postgres://postgres:SukeShi3010@localhost:5432/guitareboissieres -f app/var/db.sql`
+j'ai plein d'erreurs de ce type même en supprimant la table au préalable
+`psql:app/var/db.sql:808: ERREUR:  les clÃ©s primaires multiples ne sont pas autorisÃ©es pour la table Â« messenger_messages Â»
+ psql:app/var/db.sql:817: ERREUR:  les clÃ©s primaires multiples ne sont pas autorisÃ©es pour la table Â« modeles_files Â»
+ psql:app/var/db.sql:826: ERREUR:  les clÃ©s primaires multiples ne sont pas autorisÃ©es pour la table Â« modeles Â»
+ psql:app/var/db.sql:834: ERREUR:  la relation Â« idx_75ea56e016ba31db Â» existe dÃ©jÃ 
+ psql:app/var/db.sql:842: ERREUR:  la relation Â« idx_75ea56e0e3bd61ce Â» existe dÃ©jÃ 
+ psql:app/var/db.sql:850: ERREUR:  la relation Â« idx_75ea56e0fb7336f0 Â» existe dÃ©jÃ 
+ psql:app/var/db.sql:858: ERREUR:  le trigger Â« notify_trigger Â» de la relation Â« messenger_messages Â» existe dÃ©jÃ `
+
+comme si c'était pas suffisant je me tape ça
+`An exception occurred while executing a query: SQLSTATE[42P01]: Undefined table: 7 ERROR: relation "galaxy" does not exist
+ LINE 1: ... AS title_9, t0.description AS description_10 FROM galaxy t0`
+
+ j'ai essayé plein de trucs y'a rien qui marche c'est pour ça je déteste docker quand y'a un truc qui foire ça bloque tout et tu peux rien faire tant que tu trouve pas le microtruc imbriqué...
+
+ j'ai rajouté `SET search_path TO public;` dans le container sql et là la page charge en boucle donc je sais même pas si y'a une erreur
+ après 5 minutes j'ai enfin quelque chose
+`Bienvenue dans la Galaxie Boissières
+Ici gravitent les guitares Boissières qui ont changé d'orbite`
+du coup ça m'avance pas rien ne fonctionne à 5 min de la fin j'ai rien pu tester
+
+
+--Introduction:
+
+La performance est un aspect non négligeable du développement web,
+car cela influence directement l'expérience utilisateur.
+
+
+Un site ou une application lente risque de faire fuir les utilisateurs,
+augmenter le taux de rebond et réduire les conversions,
+ce qui fera indéniablement chuter le référencement.
+De plus, avec l’essor des appareils mobiles et des connexions réseau rapide,
+les utilisateurs sont de plus en plus exigeants en matière de vitesse,
+il est donc nécessaire d’optimiser le code pour obtenir une exécution rapide et efficace.
+
+En PHP, une mauvaise gestion des ressources,
+des requêtes inefficaces ou un code mal optimisé risquent de ralentir une application.
+Optimiser son code permet améliorer la vitesse d'exécution,
+mais aussi réduire la consommation de ressources serveurs,
+ce qui peut avoir un impact direct sur les coûts d’hébergement.
+
+--Hypothèse
+Au vu de mes problèmes rencontrés lors de l'initialisation du projet,
+le problème vient de la documentation et du code fourni,
+certaines commandes sont incorrectes, le code sql n'est pas correctement fait pour faire fonctionner la base par rapport au code
+le code php n'est pas optimisé pour fonctionner avec la base de données,
+le requêtes enchaînées font ramer le chargement de la page pour au final ne rien afficher
+rien que l'installation composer est horriblement lente donc il y a probablement trop de deps inutiles qui ralentissent l'initialisation
+
+--Tests et mesures
+n'ayant aps de projet fonctionnel je n'ai pas pu tester ni mesurer quoi que ce soit mais je pense que les requêtes enchaînées sont le problème principal de la lenteur
+la seule mesure que j'ai c'est grâce à symfony sur le chargement de la page qui aura pris plus de 30 secondes (cf Capture.PNG)
+
+
+--Solutions
+mieux organiser la base de données et les requêtes pour éviter les enchaînées qui font perdre du temps
+
+--Conclusion
