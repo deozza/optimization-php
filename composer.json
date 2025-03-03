@@ -1,0 +1,5 @@
+{
+    "require": {
+        "liip/imagine-bundle": "^2.13"
+    }
+}
