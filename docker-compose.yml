@@ -3,7 +3,7 @@ services:
           container_name: optimization-php
           build:
                context: .
-               dockerfile: Dockerfile
+               dockerfile: app.dockerfile
           volumes: 
                - ./app:/var/www/html
                - ./logs:/var/log/apache2/
@@ -20,3 +20,12 @@ services:
                POSTGRES_PASSWORD: password
                POSTGRES_USER: postgres
                POSTGRES_DB: db
+     ipx:
+          container_name: ipx
+          build:
+               context: .
+               dockerfile: ipx.dockerfile
+          volumes:
+               - ./app/assets/img:/assets
+          ports:
+               - 8889:3000

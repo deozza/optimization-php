@@ -42,3 +42,7 @@ For the application itself, if the application is slow, the user will feel frust
 
 1. After implementing the first solution, the number of queries is now 1 and the time to create the page varies between 0.1 and 0.5 seconds. This is a huge improvement.
 2. After adding the `loading="lazy"` attribute, the initial page load makes 11 requests of images (divided by 11) for a total of 136 MB (divided by 5.5).
+
+**In addition:**
+
+- I set up an IPX server. It allows to automatically serve images in `webp` format (or any specified format) and to resize them on the fly. This way, the client will always receive the best image format and size for his device. Thus, the size of the images is 221 KB (divided by 3334) for the initial page load.
