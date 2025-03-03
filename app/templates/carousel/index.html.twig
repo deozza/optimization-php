@@ -10,24 +10,24 @@
 		<h2 class="text-xl text-center">Ici gravitent les guitares Boissières qui ont changé d'orbite</h2>
 	</header>
 	{% for item in carousel %}
-	<article class="flex flex-row items-center justify-between w-full">
+	<section class="flex flex-row items-center justify-between w-full">
 		<div class="flex flex-col items-center justify-center space-y-6 w-5/12">
 			<h3 class="text-4xl uppercase">{{item.title | raw}}</h3>
 			<p>{{item.description | raw}}</p>
 		</div>
 		<div class="flex flex-col items-center justify-center w-5/12 space-y-6">
 			
-			<img src="{{asset('img/' ~ item.files[0].filename_disk)}}" class="w-full h-[640px] object-cover" loading="lazy">
+			<img src="{{asset('img/' ~ item.files[0].filename_disk)}}" class="w-full h-[640px] object-cover" loading="lazy" alt="">
 
 			<div class="flex flex-row items-center justify-center space-x-6">
 				{% for file in item.files %}
 					{% if loop.index0 != 0 %}
-						<img src="{{asset('img/' ~ file.filename_disk)}}" class="w-full max-h-14 object-cover" loading="lazy">
+						<img src="{{asset('img/' ~ file.filename_disk)}}" class="w-full max-h-14 object-cover" loading="lazy" alt="">
 					{% endif%}
 				{% endfor%}
 			</div>
 		</div>
-	</article>
+	</section>
 	{% endfor %}
 </div>
 
