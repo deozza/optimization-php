@@ -16,6 +16,20 @@ class GalaxyRepository extends ServiceEntityRepository
         parent::__construct($registry, Galaxy::class);
     }
 
+       /**
+        * @return Galaxy[] Returns the carousels
+        */
+    public function findCarousel()
+    {
+        $qb = $this->createQueryBuilder('g')
+            ->select('g', 'm', 'mf', 'df')
+            ->leftJoin('g.modele', 'm')
+            ->leftJoin('m.files', 'mf')
+            ->leftJoin('mf.file', 'df');
+
+        return $qb->getQuery()->getResult();
+    }
+
     //    /**
     //     * @return Galaxy[] Returns an array of Galaxy objects
     //     */
