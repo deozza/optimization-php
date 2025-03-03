@@ -49,13 +49,15 @@ For the application itself, if the application is slow, the user will feel frust
 
 #### Final metrics
 
-| Metric | Before | After |
-| --- | --- | --- |
-| Number of DB queries | 164 | 1 |
-| Time to create the page | 1.5 seconds | 0.1 seconds |
-| Number of images initially loaded | 121 | 11 |
-| Size of the images initially loaded | 737 MB | 221 KB |
-| Lighthouse performance[^1] | 41/100 | 90/100 |
+| Metric | Before | After | Improvement |
+| --- | --- | --- | --- |
+| Number of DB queries | 164 | 1 | divided by 164 |
+| Time to create the page | 1.5 seconds | 0.1 seconds | divided by 15 |
+| Number of images initially loaded | 121 | 11 | divided by 11 |
+| Size of the images initially loaded | 737 MB | 221 KB | divided by 3334 |
+| Lighthouse performance[^1] | 41/100 | 90/100 | +49 |
+| Largest Contentful Paint | 139.4 seconds | 3.3 seconds | divided by 42 |
+| Total Blocking Time | 2.8 seconds | 0.01 seconds | divided by 280 |
 
 ### *What could be done in the future to improve the performances again?*
 
