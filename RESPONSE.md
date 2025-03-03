@@ -98,10 +98,8 @@ Après implémentation des solutions, il faudrait refaire les tests avec les mê
 
 3. **Mise en place d'une PWA** (Progressive Web App) pour permettre un fonctionnement hors ligne et améliorer l'expérience utilisateur.
 
-4. **Optimisation du rendu côté serveur** avec des techniques comme le Server-Side Rendering (SSR) ou le Static Site Generation (SSG).
+4. **Implémentation d'une stratégie de préchargement** pour anticiper les besoins de l'utilisateur et charger les ressources avant qu'elles ne soient nécessaires.
 
-5. **Implémentation d'une stratégie de préchargement** pour anticiper les besoins de l'utilisateur et charger les ressources avant qu'elles ne soient nécessaires.
+5. **Monitoring continu des performances** avec des outils comme New Relic ou Datadog pour détecter rapidement les régressions.
 
-6. **Monitoring continu des performances** avec des outils comme New Relic ou Datadog pour détecter rapidement les régressions.
-
-7. **Optimisation de la base de données** avec des index appropriés et une révision régulière des requêtes les plus coûteuses.
+6. **Optimisation de la base de données** avec des index appropriés et une révision régulière des requêtes les plus coûteuses.
