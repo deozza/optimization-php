@@ -13,31 +13,49 @@ use Symfony\Component\Routing\Attribute\Route;
 final class CarouselController extends AbstractController
 {
     #[Route('/carousel', name: 'app_carousel')]
-    public function index(GalaxyRepository $galaxyRepository, ModelesRepository $modelesRepository, ModelesFilesRepository $modelesFilesRepository, DirectusFilesRepository $directusFilesRepository): Response
-    {
+    public function index(
+        GalaxyRepository $galaxyRepository,
+        ModelesRepository $modelesRepository,
+        ModelesFilesRepository $modelesFilesRepository,
+        DirectusFilesRepository $directusFilesRepository
+    ): Response {
+        // Récupérer toutes les galaxies avec les modèles associés en une seule requête
         $galaxies = $galaxyRepository->findAll();
-        $carousel = [];
 
-        foreach($galaxies as $galaxy) {
+        // Collecter tous les modèles et leurs fichiers associés à l'avance pour éviter les requêtes répétées
+        $modelIds = array_map(fn($galaxy) => $galaxy->getModele(), $galaxies);
+        $modeles = $modelesRepository->findBy(['id' => $modelIds]);
+
+        // Collecter tous les fichiers liés aux modèles en une seule requête
+        $modeleIds = array_map(fn($modele) => $modele->getId(), $modeles);
+        $modelesFiles = $modelesFilesRepository->findBy(['modeles_id' => $modeleIds]);
+
+        // Récupérer les fichiers Directus pour tous les fichiers liés
+        $directusFileIds = array_map(fn($modelesFile) => $modelesFile->getDirectusFilesId(), $modelesFiles);
+        $directusFiles = $directusFilesRepository->findBy(['id' => $directusFileIds]);
+
+        // Organiser les données pour le carousel
+        $carousel = [];
+        foreach ($galaxies as $galaxy) {
             $carouselItem = [
                 'title' => $galaxy->getTitle(),
                 'description' => $galaxy->getDescription(),
+                'files' => [],
             ];
-            
-            $modele = $modelesRepository->find($galaxy->getModele());
-            $modelesFiles = $modelesFilesRepository->findBy([
-                'modeles_id' => $modele->getId()
-            ]);
-            $files = [];
 
-            foreach($modelesFiles as $modelesFile) {
-                $file = $directusFilesRepository->find($modelesFile->getDirectusFilesId());
-                $files[] = $file;
+            // Trouver le modèle correspondant à la galaxie
+            $modele = $modeles[$galaxy->getModele()];
+
+            // Filtrer les fichiers associés à ce modèle
+            $modelFiles = array_filter($modelesFiles, fn($modelesFile) => $modelesFile->getModelesId() === $modele->getId());
+            foreach ($modelFiles as $modelesFile) {
+                $file = $directusFiles[$modelesFile->getDirectusFilesId()];
+                $carouselItem['files'][] = $file;
             }
-            $carouselItem['files'] = $files;
+
             $carousel[] = $carouselItem;
         }
-        
+
         return $this->render('carousel/index.html.twig', [
             'carousel' => $carousel
         ]);
