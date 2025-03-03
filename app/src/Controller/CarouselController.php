@@ -18,26 +18,44 @@ final class CarouselController extends AbstractController
         $galaxies = $galaxyRepository->findAll();
         $carousel = [];
 
-        foreach($galaxies as $galaxy) {
+        $modeles = $modelesRepository->findAll();
+        $modelesFiles = $modelesFilesRepository->findAll();
+        $directusFiles = $directusFilesRepository->findAll();
+
+        $modelesMap = [];
+        foreach ($modeles as $modele) {
+            $modelesMap[$modele->getId()] = $modele;
+        }
+
+        $modelesFilesMap = [];
+        foreach ($modelesFiles as $modelesFile) {
+            $modelesFilesMap[$modelesFile->getModelesId()][] = $modelesFile;
+        }
+
+        $directusFilesMap = [];
+        foreach ($directusFiles as $file) {
+            $directusFilesMap[$file->getId()] = $file;
+        }
+
+        foreach ($galaxies as $galaxy) {
             $carouselItem = [
                 'title' => $galaxy->getTitle(),
                 'description' => $galaxy->getDescription(),
             ];
-            
-            $modele = $modelesRepository->find($galaxy->getModele());
-            $modelesFiles = $modelesFilesRepository->findBy([
-                'modeles_id' => $modele->getId()
-            ]);
+
+            $modele = $modelesMap[$galaxy->getModele()];
             $files = [];
 
-            foreach($modelesFiles as $modelesFile) {
-                $file = $directusFilesRepository->find($modelesFile->getDirectusFilesId());
-                $files[] = $file;
+            if (isset($modelesFilesMap[$modele->getId()])) {
+                foreach ($modelesFilesMap[$modele->getId()] as $modelesFile) {
+                    $files[] = $directusFilesMap[$modelesFile->getDirectusFilesId()];
+                }
             }
+
             $carouselItem['files'] = $files;
             $carousel[] = $carouselItem;
         }
-        
+
         return $this->render('carousel/index.html.twig', [
             'carousel' => $carousel
         ]);
