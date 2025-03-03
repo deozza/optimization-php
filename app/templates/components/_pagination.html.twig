@@ -1,0 +1,36 @@
+{% if totalPages > 1 %}
+<nav aria-label="Pagination" class="flex items-center justify-center py-8">
+    <ul class="flex items-center space-x-2">
+        {% if currentPage > 1 %}
+            <li>
+                <a href="{{ path('app_carousel', {'page': currentPage - 1}) }}" 
+                   class="px-4 py-2 border rounded hover:bg-gray-100" 
+                   aria-label="Page précédente">
+                    &laquo;
+                </a>
+            </li>
+        {% endif %}
+        
+        {% for page in 1..totalPages %}
+            <li>
+                <a href="{{ path('app_carousel', {'page': page}) }}" 
+                   class="px-4 py-2 border rounded {% if page == currentPage %}bg-blue-500 text-white{% else %}hover:bg-gray-100{% endif %}" 
+                   aria-label="Page {{ page }}" 
+                   {% if page == currentPage %}aria-current="page"{% endif %}>
+                    {{ page }}
+                </a>
+            </li>
+        {% endfor %}
+        
+        {% if currentPage < totalPages %}
+            <li>
+                <a href="{{ path('app_carousel', {'page': currentPage + 1}) }}" 
+                   class="px-4 py-2 border rounded hover:bg-gray-100" 
+                   aria-label="Page suivante">
+                    &raquo;
+                </a>
+            </li>
+        {% endif %}
+    </ul>
+</nav>
+{% endif %}

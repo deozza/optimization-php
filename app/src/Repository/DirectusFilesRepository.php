@@ -6,38 +6,35 @@ use App\Entity\DirectusFiles;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
-/**
- * @extends ServiceEntityRepository<DirectusFiles>
- */
 class DirectusFilesRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, DirectusFiles::class);
     }
-
-    //    /**
-    //     * @return DirectusFiles[] Returns an array of DirectusFiles objects
-    //     */
-    //    public function findByExampleField($value): array
-    //    {
-    //        return $this->createQueryBuilder('d')
-    //            ->andWhere('d.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->orderBy('d.id', 'ASC')
-    //            ->setMaxResults(10)
-    //            ->getQuery()
-    //            ->getResult()
-    //        ;
-    //    }
-
-    //    public function findOneBySomeField($value): ?DirectusFiles
-    //    {
-    //        return $this->createQueryBuilder('d')
-    //            ->andWhere('d.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->getQuery()
-    //            ->getOneOrNullResult()
-    //        ;
-    //    }
+    
+    /**
+     * @param array $fileIds
+     * @return array
+     */
+    public function findByIdsIndexed(array $fileIds): array
+    {
+        if (empty($fileIds)) {
+            return [];
+        }
+        
+        $files = $this->createQueryBuilder('df')
+            ->where('df.id IN (:fileIds)')
+            ->setParameter('fileIds', $fileIds)
+            ->getQuery()
+            ->enableResultCache(3600)
+            ->getResult();
+            
+        $indexedFiles = [];
+        foreach ($files as $file) {
+            $indexedFiles[$file->getId()] = $file;
+        }
+        
+        return $indexedFiles;
+    }
 }

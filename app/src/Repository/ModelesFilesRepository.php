@@ -16,28 +16,24 @@ class ModelesFilesRepository extends ServiceEntityRepository
         parent::__construct($registry, ModelesFiles::class);
     }
 
-//    /**
-//     * @return ModelesFiles[] Returns an array of ModelesFiles objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('m')
-//            ->andWhere('m.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('m.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
+    /**
+     * 
+     * @param array 
+     * @return ModelesFiles[] 
+     */
+    public function findFilesForModeles(array $modelesIds): array
+    {
+        if (empty($modelesIds)) {
+            return [];
+        }
 
-//    public function findOneBySomeField($value): ?ModelesFiles
-//    {
-//        return $this->createQueryBuilder('m')
-//            ->andWhere('m.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+        return $this->createQueryBuilder('mf')
+            ->select('mf')
+            ->leftJoin('mf.directus_file', 'df')
+            ->where('mf.modeles_id IN (:modelesIds)')
+            ->setParameter('modelesIds', $modelesIds)
+            ->getQuery()
+            ->enableResultCache(3600)
+            ->getResult();
+    }
 }
