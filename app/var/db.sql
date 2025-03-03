@@ -19,7 +19,12 @@ SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
 
+DROP ROLE IF EXISTS user;
+
+CREATE ROLE "user" WITH LOGIN PASSWORD 'password';
+
 DROP DATABASE IF EXISTS guitareboissieres;
+
 --
 -- TOC entry 3414 (class 1262 OID 18136)
 -- Name: guitareboissieres; Type: DATABASE; Schema: -; Owner: user
@@ -27,6 +32,7 @@ DROP DATABASE IF EXISTS guitareboissieres;
 
 CREATE DATABASE guitareboissieres WITH TEMPLATE = template0 ENCODING = 'UTF8' LOCALE_PROVIDER = libc LOCALE = 'en_US.utf8';
 
+GRANT ALL PRIVILEGES ON DATABASE guitareboissieres TO "user";
 
 ALTER DATABASE guitareboissieres OWNER TO "user";
 
