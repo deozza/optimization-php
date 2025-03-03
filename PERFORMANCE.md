@@ -27,7 +27,7 @@ For the application itself, if the application is slow, the user will feel frust
 ### Results
 
 1. To confirm my first hypothesis, I can first use the ***debug bar*** of Symfony. I can see the number of DB queries that are done, and the time to create the page. In our case, the number of queries is 164 and the time to create the page (with caches enabled) is 1.5 seconds. The number of queries is very high, so we can improve this, and it will also improve the time to create the page which is pretty high for a cache-enabled page.
-2. To confirm my second hypothesis, I can use the ***network tab*** of the dev tools. When I reload the page, I can see the size of the images that are loaded and the time it takes to load them. In our case, there is 121 images for a total of 737 MB to load (overall the website weight 738 MB, so almost all the weight is images). I can also use the **lighthouse** tool to see the performance of the website. In our case, when I run the tool in mobile mode (as it is more exigent), the performance is 41/100. This number itself doesn't mean anything as really big websites have a low score too, but the detailled metrics are interesting. The First Contentful Paint is 2.1 seconds. The Largest Contentful Paint is 139.4 seconds. And the Total Blocking Time is 2.8 seconds. I ran these tests on a local server, so the results will be even worse on a remote server.
+2. To confirm my second hypothesis, I can use the ***network tab*** of the dev tools. When I reload the page, I can see the size of the images that are loaded and the time it takes to load them. In our case, there is 121 images for a total of 737 MB to load (overall the website weight 738 MB, so almost all the weight is images). I can also use the **lighthouse** tool to see the performance of the website. In our case, when I run the tool in mobile mode (as it is more exigent), the performance is 41/100[^1]. This number itself doesn't mean anything as really big websites have a low score too, but the detailled metrics are interesting. The First Contentful Paint is 2.1 seconds. The Largest Contentful Paint is 139.4 seconds. And the Total Blocking Time is 2.8 seconds. I ran these tests on a local server, so the results will be even worse on a remote server.
 
 ## Solutions
 
@@ -40,15 +40,27 @@ For the application itself, if the application is slow, the user will feel frust
 
 ### New measurements
 
-1. After implementing the first solution, the number of queries is now 1 and the time to create the page varies between 0.1 and 0.5 seconds. This is a huge improvement.
+1. After implementing the first solution, the number of queries is now 1 and the time to create the page is around 0.1 seconds (divided by 15). This is a huge improvement.
 2. After adding the `loading="lazy"` attribute, the initial page load makes 11 requests of images (divided by 11) for a total of 136 MB (divided by 5.5).
 
 **In addition:**
 
 - I set up an IPX server. It allows to automatically serve images in `webp` format (or any specified format) and to resize them on the fly. This way, the client will always receive the best image format and size for his device. Thus, the size of the images is 221 KB (divided by 3334) for the initial page load.
 
+#### Final metrics
+
+| Metric | Before | After |
+| --- | --- | --- |
+| Number of DB queries | 164 | 1 |
+| Time to create the page | 1.5 seconds | 0.1 seconds |
+| Number of images initially loaded | 121 | 11 |
+| Size of the images initially loaded | 737 MB | 221 KB |
+| Lighthouse performance[^1] | 41/100 | 90/100 |
+
 ### *What could be done in the future to improve the performances again?*
 
 1. IPX is a temporary solution to serve optimized images quickly. In the future, we could use a CDN to cache the images and serve them even faster.
 2. Move the server closer to the users.
 3. Use Thumbhash to generate image placeholders. This way, the browser will show a placeholder while the image is loading and the user will have the impression that the website is faster.
+
+[^1]: The performance of the website has been measured with the development server of Symfony on my own browser. The results are affected by the Chrome extensions I have installed and the development server overhead. Even if the results are not accurate, they are still relevant to get an idea of the performance of the website.
