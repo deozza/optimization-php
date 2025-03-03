@@ -9,26 +9,91 @@
 		<h1 class="text-5xl text-center">Bienvenue dans la Galaxie Boissières</h1>
 		<h2 class="text-xl text-center">Ici gravitent les guitares Boissières qui ont changé d'orbite</h2>
 	</section>
-	{% for item in carousel %}
-	<section class="flex flex-row items-center justify-between w-full">
-		<div class="flex flex-col items-center justify-center space-y-6 w-5/12">
-			<h2 class="text-4xl uppercase">{{item.title | raw}}</h2>
-			{{item.description | raw}}
+	
+	<div id="carousel-container" class="flex flex-col items-center space-y-12 w-full">
+		{% for item in carousel %}
+			{% include 'carousel/_item.html.twig' with {'item': item} %}
+		{% endfor %}
+	</div>
+	
+	{% if hasMoreItems %}
+		<div id="loading-indicator" class="flex justify-center items-center py-4">
+			<div class="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900"></div>
 		</div>
-		<div class="flex flex-col items-center justify-center w-5/12 space-y-6">
-			
-			<img src="{{asset('img/' ~ item.files[0].filename_disk)}}" class="w-full h-[640px] object-cover">
-
-			<div class="flex flex-row items-center justify-center space-x-6">
-				{% for file in item.files %}
-					{% if loop.index0 != 0 %}
-						<img src="{{asset('img/' ~ file.filename_disk)}}" class="w-full max-h-14 object-cover">
-					{% endif%}
-				{% endfor%}
-			</div>
-		</div>
-	</section>
-	{% endfor %}
+		<div id="load-more-trigger" class="h-10 w-full"></div>
+	{% endif %}
 </div>
 
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		let isLoading = false;
+		let nextOffset = {{ carousel|length }};
+		let hasMoreItems = {{ hasMoreItems ? 'true' : 'false' }};
+		const loadMoreTrigger = document.getElementById('load-more-trigger');
+		const carouselContainer = document.getElementById('carousel-container');
+		const loadingIndicator = document.getElementById('loading-indicator');
+		
+		function isElementInViewport(el) {
+			const rect = el.getBoundingClientRect();
+			return (
+				rect.top >= 0 &&
+				rect.left >= 0 &&
+				rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+				rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+			);
+		}
+		
+		function loadMoreItems() {
+			if (isLoading || !hasMoreItems) return;
+			
+			isLoading = true;
+			loadingIndicator.classList.remove('hidden');
+			
+			fetch(`/api/carousel/load-more?offset=${nextOffset}&limit=3`)
+				.then(response => response.json())
+				.then(data => {
+					carouselContainer.insertAdjacentHTML('beforeend', data.html);
+					
+					nextOffset = data.nextOffset;
+					hasMoreItems = data.hasMoreItems;
+					
+					loadingIndicator.classList.add('hidden');
+					isLoading = false;
+					
+					if (!hasMoreItems) {
+						loadMoreTrigger.remove();
+					}
+				})
+				.catch(error => {
+					console.error('Erreur lors du chargement des éléments:', error);
+					loadingIndicator.classList.add('hidden');
+					isLoading = false;
+				});
+		}
+		
+		if ('IntersectionObserver' in window) {
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting && hasMoreItems) {
+						loadMoreItems();
+					}
+				});
+			}, { rootMargin: '0px 0px 200px 0px' });
+			
+			if (loadMoreTrigger) {
+				observer.observe(loadMoreTrigger);
+			}
+		} else {
+			window.addEventListener('scroll', function() {
+				if (loadMoreTrigger && isElementInViewport(loadMoreTrigger) && hasMoreItems) {
+					loadMoreItems();
+				}
+			});
+		}
+	});
+</script>
 {% endblock %}
