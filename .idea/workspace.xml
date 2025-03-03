@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="873c2801-89dc-4f4c-a3c2-1bcb0d485ece" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/Twig/WebpConvertisor.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.env.dist" beforeDir="false" afterPath="$PROJECT_DIR$/app/.env.dist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Controller/CarouselController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Controller/CarouselController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/carousel/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/carousel/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +208,7 @@
       <workItem from="1740938198011" duration="18042000" />
       <workItem from="1740988796018" duration="1862000" />
       <workItem from="1740990716292" duration="764000" />
-      <workItem from="1740991506684" duration="4187000" />
+      <workItem from="1740991506684" duration="7379000" />
     </task>
     <servers />
   </component>
