@@ -12,8 +12,9 @@ class ModelesFiles
     #[ORM\Column]
     private ?string $id = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $modeles_id = null;
+    #[ORM\ManyToOne(targetEntity: Modeles::class)]
+    #[ORM\JoinColumn(name: 'modeles_id', referencedColumnName: 'id', nullable: false)]
+    private ?Modeles $modele = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $directus_files_id = null;
@@ -23,14 +24,14 @@ class ModelesFiles
         return $this->id;
     }
 
-    public function getModelesId(): ?string
+    public function getModele(): ?Modeles
     {
-        return $this->modeles_id;
+        return $this->modele;
     }
 
-    public function setModelesId(string $modeles_id): static
+    public function setModele(?Modeles $modele): static
     {
-        $this->modeles_id = $modeles_id;
+        $this->modele = $modele;
 
         return $this;
     }
