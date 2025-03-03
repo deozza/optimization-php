@@ -1,0 +1,58 @@
+Analyse de performance de l’application - Notation /10
+
+Introduction
+
+    L’objectif de cette analyse est d’évaluer la performance d'une application Symfony 
+    et d’identifier les points d’amélioration afin d’optimiser son efficacité et sa rapidité.
+
+
+Pourquoi la performance est importante ?
+
+    Une application performante garantit :
+
+    - Une meilleure expérience utilisateur (temps de chargement réduit / taux de rebound réduit).
+    - Une optimisation des ressources serveur.
+    - Un meilleur référencement (SEO).
+    - Une meilleure scalabilité pour répondre à une augmentation du trafic.
+
+
+Hypothèse
+
+    Je suppose que les problèmes de performance proviennent principalement :
+
+    - D’un mauvais cache des requêtes SQL.
+    - D’un manque d’optimisation des requêtes vers la BDD.
+    - Récupération des images trop longue
+
+
+Tests et mesures
+
+    Quelles métriques confirment votre hypothèse ?
+
+        Les mesures suivantes ont confirmé nos hypothèses :
+
+        Temps de réponse des requêtes SQL : Certaines requêtes prennent plusieurs secondes.
+        Consommation mémoire : Une utilisation excessive lors de certaines actions.
+        Nombre de requêtes SQL par page : Trop de requêtes exécutées.
+        Log : Récupération des images une par une petit à petit
+
+    Outils utilisés pour mesurer/tester
+
+        Lighthouse (Google Chrome) : Analyse des performances front-end.
+        Symfony Profiler : Analyse des requêtes et des performances de l’application.
+
+Solutions immédiates pour corriger l’application
+
+    Optimisation des requêtes SQL : Utilisation de jointures pour réduire le nombre de requêtes.
+    Optimisation des assets : Lazy-loading des images.
+
+
+Conclusion
+
+    Nouvelle mesure pour confirmer ma solutions
+
+        Le chargement est passé de 6000ms à 3000ms et le nombre de DB Queries est passé de 164 à 3 et l'utilisation de la memoire est moindre. (voir screen)
+
+    Qu'est ce qui peut être fait dans le future pour encore améliorer les performances
+
+        Optimisation de toutes les images dans le site car trop volumineuse
