@@ -27,7 +27,7 @@ For the application itself, if the application is slow, the user will feel frust
 ### Results
 
 1. To confirm my first hypothesis, I can first use the ***debug bar*** of Symfony. I can see the number of DB queries that are done, and the time to create the page. In our case, the number of queries is 164 and the time to create the page (with caches enabled) is 1.5 seconds. The number of queries is very high, so we can improve this, and it will also improve the time to create the page which is pretty high for a cache-enabled page.
-2. To confirm my second hypothesis, I can use the ***network tab*** of the dev tools. When I reload the page, I can see the size of the images that are loaded and the time it takes to load them. In our case, there is 737 MB of images to load (overall the website weight 738 MB, so almost all the weight is images). I can also use the **lighthouse** tool to see the performance of the website. In our case, when I run the tool in mobile mode (as it is more exigent), the performance is 41/100. This number itself doesn't mean anything as really big websites have a low score too, but the detailled metrics are interesting. The First Contentful Paint is 2.1 seconds. The Largest Contentful Paint is 139.4 seconds. And the Total Blocking Time is 2.8 seconds. I ran these tests on a local server, so the results will be even worse on a remote server.
+2. To confirm my second hypothesis, I can use the ***network tab*** of the dev tools. When I reload the page, I can see the size of the images that are loaded and the time it takes to load them. In our case, there is 121 images for a total of 737 MB to load (overall the website weight 738 MB, so almost all the weight is images). I can also use the **lighthouse** tool to see the performance of the website. In our case, when I run the tool in mobile mode (as it is more exigent), the performance is 41/100. This number itself doesn't mean anything as really big websites have a low score too, but the detailled metrics are interesting. The First Contentful Paint is 2.1 seconds. The Largest Contentful Paint is 139.4 seconds. And the Total Blocking Time is 2.8 seconds. I ran these tests on a local server, so the results will be even worse on a remote server.
 
 ## Solutions
 
@@ -41,3 +41,4 @@ For the application itself, if the application is slow, the user will feel frust
 ### New measurements
 
 1. After implementing the first solution, the number of queries is now 1 and the time to create the page varies between 0.1 and 0.5 seconds. This is a huge improvement.
+2. After adding the `loading="lazy"` attribute, the initial page load makes 11 requests of images (divided by 11) for a total of 136 MB (divided by 5.5).
