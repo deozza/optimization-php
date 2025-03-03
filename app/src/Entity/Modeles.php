@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ModelesRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ModelesRepository::class)]
@@ -36,7 +38,7 @@ class Modeles
     #[ORM\Column(length: 255)]
     private ?string $description = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $variation = null;
 
     #[ORM\Column(nullable: true)]
@@ -53,6 +55,15 @@ class Modeles
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $page = null;
+
+    // Relation avec ModelesFiles
+    #[ORM\OneToMany(mappedBy: 'modele', targetEntity: ModelesFiles::class)]
+    private Collection $modelesFiles;
+
+    public function __construct()
+    {
+        $this->modelesFiles = new ArrayCollection();
+    }
 
     public function getId(): ?string
     {
@@ -76,7 +87,7 @@ class Modeles
         return $this->sort;
     }
 
-    public function setSort(int $sort): static
+    public function setSort(?int $sort): static
     {
         $this->sort = $sort;
 
@@ -112,7 +123,7 @@ class Modeles
         return $this->user_updated;
     }
 
-    public function setUserUpdated(string $user_updated): static
+    public function setUserUpdated(?string $user_updated): static
     {
         $this->user_updated = $user_updated;
 
@@ -124,7 +135,7 @@ class Modeles
         return $this->date_updated;
     }
 
-    public function setDateUpdated(string $date_updated): static
+    public function setDateUpdated(?string $date_updated): static
     {
         $this->date_updated = $date_updated;
 
@@ -136,7 +147,7 @@ class Modeles
         return $this->title;
     }
 
-    public function setTitle(string $title): static
+    public function setTitle(?string $title): static
     {
         $this->title = $title;
 
@@ -160,7 +171,7 @@ class Modeles
         return $this->variation;
     }
 
-    public function setVariation(string $variation): static
+    public function setVariation(?string $variation): static
     {
         $this->variation = $variation;
 
@@ -223,6 +234,35 @@ class Modeles
     public function setPage(?string $page): static
     {
         $this->page = $page;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, ModelesFiles>
+     */
+    public function getModelesFiles(): Collection
+    {
+        return $this->modelesFiles;
+    }
+
+    public function addModelesFile(ModelesFiles $modelesFile): static
+    {
+        if (!$this->modelesFiles->contains($modelesFile)) {
+            $this->modelesFiles->add($modelesFile);
+            $modelesFile->setModele($this);
+        }
+
+        return $this;
+    }
+
+    public function removeModelesFile(ModelesFiles $modelesFile): static
+    {
+        if ($this->modelesFiles->removeElement($modelesFile)) {
+            if ($modelesFile->getModele() === $this) {
+                $modelesFile->setModele(null);
+            }
+        }
 
         return $this;
     }
