@@ -30,8 +30,7 @@
 - Temps de génération du cache
 
 ### Outils de test
-- Lighthouse
-- XDebug
+- Network Google
 
 ## Solutions Immédiates
 
