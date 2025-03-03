@@ -1,34 +1,75 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello CarouselController!{% endblock %}
+{% block title %}Guitare Boissières - Carousel{% endblock %}
 
 {% block body %}
+	<div class="flex flex-col items-center space-y-12 w-11/12">
+		<section class="flex flex-col items-center justify-center w-11/12 space-y-6">
+			<h1 class="text-5xl text-center">Bienvenue dans la Galaxie Boissières</h1>
+			<h2 class="text-xl text-center">Ici gravitent les guitares Boissières qui ont changé d'orbite</h2>
+		</section>
 
-<div class="flex flex-col items-center space-y-12 w-11/12">
-	<section class="flex flex-col items-center justify-center w-11/12 space-y-6">
-		<h1 class="text-5xl text-center">Bienvenue dans la Galaxie Boissières</h1>
-		<h2 class="text-xl text-center">Ici gravitent les guitares Boissières qui ont changé d'orbite</h2>
-	</section>
-	{% for item in carousel %}
-	<section class="flex flex-row items-center justify-between w-full">
-		<div class="flex flex-col items-center justify-center space-y-6 w-5/12">
-			<h2 class="text-4xl uppercase">{{item.title | raw}}</h2>
-			{{item.description | raw}}
-		</div>
-		<div class="flex flex-col items-center justify-center w-5/12 space-y-6">
-			
-			<img src="{{asset('img/' ~ item.files[0].filename_disk)}}" class="w-full h-[640px] object-cover">
+		{% for item in carousel %}
+			<section class="flex flex-row items-center justify-between w-full">
+				<div class="flex flex-col items-center justify-center space-y-6 w-5/12">
+					<h2 class="text-4xl uppercase">{{item.title | raw}}</h2>
+					{{item.description | raw}}
+				</div>
+				<div class="flex flex-col items-center justify-center w-5/12 space-y-6">
+					{% if item.files[0] is defined %}
+						<img
+								src="{{asset('img/' ~ item.files[0].filename_disk)}}"
+								srcset="{{ asset('img/' ~ item.files[0].filename_disk) }} 800w,
+									{{ asset('img/' ~ item.files[0].filename_disk) }} 400w"
+								sizes="(max-width: 600px) 400px, 800px"
+								class="w-full h-[640px] object-cover"
+								width="800"
+								height="640"
+								alt="{{ item.title }}"
+								fetchpriority="high"
+								decoding="async"
+						>
+					{% endif %}
 
-			<div class="flex flex-row items-center justify-center space-x-6">
-				{% for file in item.files %}
-					{% if loop.index0 != 0 %}
-						<img src="{{asset('img/' ~ file.filename_disk)}}" class="w-full max-h-14 object-cover">
-					{% endif%}
-				{% endfor%}
+					<div class="flex flex-row items-center justify-center space-x-6">
+						{% for file in item.files %}
+							{% if loop.index0 != 0 %}
+								<img
+										src="{{asset('img/' ~ file.filename_disk)}}"
+										srcset="{{ asset('img/' ~ file.filename_disk) }} 100w,
+											{{ asset('img/' ~ file.filename_disk) }} 50w"
+										sizes="(max-width: 600px) 50px, 100px"
+										class="w-full max-h-14 object-cover"
+										width="100"
+										height="56"
+										loading="lazy"
+										alt="{{ item.title }} thumbnail {{ loop.index }}"
+										decoding="async"
+								>
+							{% endif %}
+						{% endfor %}
+					</div>
+				</div>
+			</section>
+		{% endfor %}
+
+		{% if totalPages > 1 %}
+			<div class="flex justify-center space-x-4 mt-8">
+				{% if currentPage > 1 %}
+					<a href="{{ path('app_carousel', {'page': currentPage - 1}) }}" class="px-4 py-2 bg-gray-200 rounded">Précédent</a>
+				{% endif %}
+
+				{% for i in 1..totalPages %}
+					<a href="{{ path('app_carousel', {'page': i}) }}"
+					   class="px-4 py-2 {% if i == currentPage %}bg-blue-500 text-white{% else %}bg-gray-200{% endif %} rounded">
+						{{ i }}
+					</a>
+				{% endfor %}
+
+				{% if currentPage < totalPages %}
+					<a href="{{ path('app_carousel', {'page': currentPage + 1}) }}" class="px-4 py-2 bg-gray-200 rounded">Suivant</a>
+				{% endif %}
 			</div>
-		</div>
-	</section>
-	{% endfor %}
-</div>
-
+		{% endif %}
+	</div>
 {% endblock %}
