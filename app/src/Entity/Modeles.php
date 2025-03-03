@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ModelesRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ModelesRepository::class)]
@@ -53,6 +55,24 @@ class Modeles
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $page = null;
+
+    /**
+     * @var Collection<int, Galaxy>
+     */
+    #[ORM\OneToMany(targetEntity: Galaxy::class, mappedBy: 'modeleB')]
+    private Collection $galaxies;
+
+    /**
+     * @var Collection<int, ModelesFiles>
+     */
+    #[ORM\OneToMany(targetEntity: ModelesFiles::class, mappedBy: 'modeles')]
+    private Collection $files;
+
+    public function __construct()
+    {
+        $this->galaxies = new ArrayCollection();
+        $this->files = new ArrayCollection();
+    }
 
     public function getId(): ?string
     {
@@ -223,6 +243,66 @@ class Modeles
     public function setPage(?string $page): static
     {
         $this->page = $page;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Galaxy>
+     */
+    public function getGalaxies(): Collection
+    {
+        return $this->galaxies;
+    }
+
+    public function addGalaxy(Galaxy $galaxy): static
+    {
+        if (!$this->galaxies->contains($galaxy)) {
+            $this->galaxies->add($galaxy);
+            $galaxy->setModeleB($this);
+        }
+
+        return $this;
+    }
+
+    public function removeGalaxy(Galaxy $galaxy): static
+    {
+        if ($this->galaxies->removeElement($galaxy)) {
+            // set the owning side to null (unless already changed)
+            if ($galaxy->getModeleB() === $this) {
+                $galaxy->setModeleB(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, ModelesFiles>
+     */
+    public function getFiles(): Collection
+    {
+        return $this->files;
+    }
+
+    public function addFile(ModelesFiles $file): static
+    {
+        if (!$this->files->contains($file)) {
+            $this->files->add($file);
+            $file->setModeles($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFile(ModelesFiles $file): static
+    {
+        if ($this->files->removeElement($file)) {
+            // set the owning side to null (unless already changed)
+            if ($file->getModeles() === $this) {
+                $file->setModeles(null);
+            }
+        }
 
         return $this;
     }

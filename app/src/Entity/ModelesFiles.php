@@ -18,6 +18,13 @@ class ModelesFiles
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $directus_files_id = null;
 
+    #[ORM\ManyToOne(inversedBy: 'files')]
+    private ?Modeles $modeles = null;
+
+    #[ORM\ManyToOne(inversedBy: 'modelesFiles')]
+    #[ORM\JoinColumn(name: 'directus_files_id', referencedColumnName: 'id')]
+    private ?DirectusFiles $file = null;
+
     public function getId(): ?string
     {
         return $this->id;
@@ -43,6 +50,30 @@ class ModelesFiles
     public function setDirectusFilesId(string $directus_files_id): static
     {
         $this->directus_files_id = $directus_files_id;
+
+        return $this;
+    }
+
+    public function getModeles(): ?Modeles
+    {
+        return $this->modeles;
+    }
+
+    public function setModeles(?Modeles $modeles): static
+    {
+        $this->modeles = $modeles;
+
+        return $this;
+    }
+
+    public function getFile(): ?DirectusFiles
+    {
+        return $this->file;
+    }
+
+    public function setFile(?DirectusFiles $file): static
+    {
+        $this->file = $file;
 
         return $this;
     }
