@@ -51,7 +51,7 @@ Conclusion
 
     Nouvelle mesure pour confirmer ma solutions
 
-        Le chargement est passé de 8000ms à 2000ms et le nombre de DB Queries est passé de 164 à 3.
+        Le chargement est passé de 6000ms à 3000ms et le nombre de DB Queries est passé de 164 à 3 et l'utilisation de la memoire est moindre. (voir screen)
 
     Qu'est ce qui peut être fait dans le future pour encore améliorer les performances
 
