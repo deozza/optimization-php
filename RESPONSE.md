@@ -70,7 +70,7 @@ Les métriques à surveiller seraient :
    - Utiliser le fichier .htaccess pour gérer la mise en cache des ressources statiques
 
 4. **Pagination** :
-   - Implémenter une pagination pour ne charger qu'un nombre limité d'éléments à la fois
+   - Implémenter une pagination au scroll, pour ne charger qu'un nombre limité d'éléments à la fois
 
 5. **Optimisation du code Twig** :
    - Activer la mise en cache des templates Twig
