@@ -28,3 +28,5 @@ app/yarn-error.log
 ###< symfony/webpack-encore-bundle ###
 logs
 postgres
+
+/vendor/

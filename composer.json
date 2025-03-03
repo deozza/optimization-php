@@ -1,0 +1,9 @@
+{
+    "name": "youri/optimization-php",
+    "autoload": {
+        "psr-4": {
+            "Youri\\OptimizationPhp\\": "src/"
+        }
+    },
+    "require": {}
+}
