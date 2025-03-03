@@ -81,7 +81,7 @@ Après implémentation des solutions, il faudrait refaire les tests avec les mê
 
 - Réduction du temps de chargement total
 - Diminution du nombre de requêtes SQL
-- Amélioration des métriques Web Vitals (LCP, FID, CLS)
+- Amélioration des métriques Web (LCP, FID, CLS)
 - Réduction de la taille des ressources
 
 ### Analyse des nouvelles performances avec Lighthouse
@@ -89,7 +89,6 @@ Après implémentation des solutions, il faudrait refaire les tests avec les mê
 ![Analyse des nouvelles performances avec Lighthouse](/lighthouse-images/new-lighthouse1.png)
 ![Analyse des nouvelles performances avec Lighthouse](/lighthouse-images/new-lighthouse2.png)
 ![Analyse des nouvelles performances avec Lighthouse](/lighthouse-images/new-lighthouse3.png)
-
 
 ### Ce qui pourrait être fait à l'avenir pour améliorer encore les performances
 
