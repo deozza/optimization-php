@@ -26,7 +26,7 @@ For the application itself, if the application is slow, the user will feel frust
 
 ### Results
 
-1. To confirm my first hypothesis, I can first use the ***debug bar*** of Symfony. I can see the number of DB queries that are done, and the time to create the page. In our case, the number of queries is 164 and the time to create the page is 1.5 seconds. While the time is not that bad, the number of queries is very high, so we can improve this, and it will also improve the time to create the page.
+1. To confirm my first hypothesis, I can first use the ***debug bar*** of Symfony. I can see the number of DB queries that are done, and the time to create the page. In our case, the number of queries is 164 and the time to create the page (with caches enabled) is 1.5 seconds. The number of queries is very high, so we can improve this, and it will also improve the time to create the page which is pretty high for a cache-enabled page.
 2. To confirm my second hypothesis, I can use the ***network tab*** of the dev tools. When I reload the page, I can see the size of the images that are loaded and the time it takes to load them. In our case, there is 737 MB of images to load (overall the website weight 738 MB, so almost all the weight is images). I can also use the **lighthouse** tool to see the performance of the website. In our case, when I run the tool in mobile mode (as it is more exigent), the performance is 41/100. This number itself doesn't mean anything as really big websites have a low score too, but the detailled metrics are interesting. The First Contentful Paint is 2.1 seconds. The Largest Contentful Paint is 139.4 seconds. And the Total Blocking Time is 2.8 seconds. I ran these tests on a local server, so the results will be even worse on a remote server.
 
 ## Solutions
@@ -35,3 +35,9 @@ For the application itself, if the application is slow, the user will feel frust
 
 1. To fix the first hypothesis, we can create a custom method in the `GalaxyRepository` that will do a join between the galaxy, the modeles and the files. This way, we will have only one query to do. This will reduce the number of queries and the time to create the page.
 2. To fix the second hypothesis, we can optimize the `img` tags. First, we use the `loading="lazy"` attribute to load the images only when they are in the viewport. We can also try to convert the images to `webp` format, which is optimized for the web. Then, we can use the `srcset` attribute to load different sizes of the images depending on the screen size. This way, the browser will load only the images that are needed.
+
+## Conclusion
+
+### New measurements
+
+1. After implementing the first solution, the number of queries is now 1 and the time to create the page varies between 0.1 and 0.5 seconds. This is a huge improvement.
