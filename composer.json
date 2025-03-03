@@ -1,0 +1,9 @@
+{
+    "require": {
+        "symfony/console": "*"
+    },
+    "require-dev": {
+        "symfony/maker-bundle": "^1.62",
+        "symfony/symfony": "^7.2"
+    }
+}

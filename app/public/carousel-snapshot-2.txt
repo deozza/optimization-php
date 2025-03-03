@@ -1,0 +1,491 @@
+[
+    {
+        "title": "<p>Saturne&nbsp;<strong>STD<\/strong><\/p>",
+        "description": "<p>Une table en noyer &eacute;chauff&eacute; sur un corps en &eacute;rable avec un manche en weng&eacute; surmont&eacute; d'une touche en &eacute;rable ond&eacute;. Vibrato et m&eacute;caniques Gotoh ainsi que des Di Marzio.<\/p>",
+        "files": [
+            {
+                "filename_disk": "952c0bbe-23a2-4652-be40-6aa44649f5ae.JPG"
+            },
+            {
+                "filename_disk": "3b90f3f2-d216-4e88-9196-9c6e0aa8c8f7.JPG"
+            },
+            {
+                "filename_disk": "49250143-682d-406f-8d59-7d5804228993.JPG"
+            },
+            {
+                "filename_disk": "bdf623a8-92da-4be1-9fd4-c3b104cdeb28.JPG"
+            },
+            {
+                "filename_disk": "c1d2bced-60b4-4308-8222-f327aa2664d7.JPG"
+            }
+        ]
+    },
+    {
+        "title": "<p>Saturne&nbsp;<strong>STD<\/strong><\/p>",
+        "description": "<p>Un corps en movingui avec un manche en sipo surmont&eacute; d'une touche en &eacute;b&egrave;ne. Chevalet et m&eacute;caniques Gotoh ainsi que des Di Marzio Tone Zone et Air Norton<\/p>",
+        "files": [
+            {
+                "filename_disk": "121b19c1-daf7-4e2e-acee-25836a36ea14.JPG"
+            },
+            {
+                "filename_disk": "be01d4ff-bf76-4718-8295-314590646a9a.JPG"
+            },
+            {
+                "filename_disk": "0aae9413-3cec-428b-8818-c46dd3c89737.JPG"
+            },
+            {
+                "filename_disk": "be40858c-8ab1-4d43-a521-5dff56639426.JPG"
+            },
+            {
+                "filename_disk": "2944a001-a1be-439a-9d2e-7ebd8b9d7c56.JPG"
+            }
+        ]
+    },
+    {
+        "title": "<p>Saturne&nbsp;<strong>STD<\/strong><\/p>",
+        "description": "<p>Une table en bouleau &eacute;chauff&eacute; sur un corps en acajou avec un manche en padouk surmont&eacute; d'une touche en &eacute;b&egrave;ne. Chevalet et m&eacute;caniques Gotoh ainsi que des Di Marzio dominion.<\/p>",
+        "files": [
+            {
+                "filename_disk": "4c94de4a-a844-4cd7-9666-33160e80aea3.JPG"
+            },
+            {
+                "filename_disk": "9e233443-f615-4a01-86fc-803ef357b760.JPG"
+            },
+            {
+                "filename_disk": "ba423bdb-2688-42e2-b68b-668e05fb8ca9.JPG"
+            },
+            {
+                "filename_disk": "e279d0de-d2a7-4b27-9659-ad4e3bba9392.JPG"
+            },
+            {
+                "filename_disk": "245a50b4-c83a-42a5-aeaf-dfdc7f262b9d.JPG"
+            }
+        ]
+    },
+    {
+        "title": "<p>Saturne <strong>Hyp&eacute;rion<\/strong><\/p>",
+        "description": "<p>Une table en gmelina moir&eacute; sur un corps en bubinga &eacute;vid&eacute; avec un manche en padouk surmont&eacute; d'une touche en cormier. Vibrato et m&eacute;caniques Gotoh ainsi que des Di Marzio Steve's Special et LiquiFire.<\/p>",
+        "files": [
+            {
+                "filename_disk": "f9a2793d-1591-42e2-9cbc-d2d73bd5524d.JPG"
+            },
+            {
+                "filename_disk": "d8336b99-a0ee-464f-aad8-eaa3a634407f.JPG"
+            },
+            {
+                "filename_disk": "06c5742c-f172-42a0-8b75-a4f1481c57a9.JPG"
+            },
+            {
+                "filename_disk": "39a1ffcc-bc20-4718-aae6-1e93fdc79f9c.JPG"
+            },
+            {
+                "filename_disk": "155be70c-54c2-4f0f-8b7c-9acdf7f09706.JPG"
+            },
+            {
+                "filename_disk": "d3810354-b2ce-4e02-8321-3c29bd289e0a.webp"
+            }
+        ]
+    },
+    {
+        "title": "<p>Saturne <strong>Hyp&eacute;rion<\/strong><\/p>",
+        "description": "<p>Un corps en black limba dont la face avant est peinte en noir satin avec un manche en &eacute;rable ond&eacute; surmont&eacute; d'une touche en &eacute;b&egrave;ne blanc. Vibrato et m&eacute;caniques Gotoh ainsi que des Di Marzio The Breed et Area.<\/p>",
+        "files": [
+            {
+                "filename_disk": "8e00cfbd-83a2-4b32-90e5-ebbbb51a191e.JPG"
+            },
+            {
+                "filename_disk": "9ba095d2-bcd6-4f1a-99e7-da1581f3cba5.JPG"
+            },
+            {
+                "filename_disk": "86c0d94e-0a94-4152-aefe-90d7f7ca1c91.JPG"
+            },
+            {
+                "filename_disk": "4cf48c70-8f9f-4333-b678-426b6f6674f0.JPG"
+            },
+            {
+                "filename_disk": "dd352dcd-ab96-4002-afa6-c37fd47412ac.webp"
+            }
+        ]
+    },
+    {
+        "title": "<p>Saturne&nbsp;<strong>Titan<\/strong><\/p>",
+        "description": "<p>Un corps en black limba avec un manche en &eacute;rable ond&eacute; surmont&eacute; d'une touche en &eacute;b&egrave;ne. Vibrato et m&eacute;caniques Gotoh ainsi que des SP Custom Chaosland et Smockey Club 62.<\/p>",
+        "files": [
+            {
+                "filename_disk": "6175e4ad-c1b4-495e-8e3c-2051eb7db7d6.JPG"
+            },
+            {
+                "filename_disk": "c15a4e59-01c7-402b-9e3e-7dd54c96a0b4.JPG"
+            },
+            {
+                "filename_disk": "2802b51e-f132-45b1-93ee-050a662cd4c8.JPG"
+            },
+            {
+                "filename_disk": "dcfdceb1-539d-4348-b492-23708d7d661c.JPG"
+            },
+            {
+                "filename_disk": "0dd8f094-2909-478e-af8a-cff60f9ab01b.JPG"
+            }
+        ]
+    },
+    {
+        "title": "<p>SATURNE <strong>HYPERION<\/strong> CUSTOM<\/p>",
+        "description": "<p>Un placage en eucalyptus fris&eacute; fum&eacute; sur un corps en black limba avec un manche en black limba surmont&eacute; d'une touche en &eacute;b&egrave;ne blanc. Vibrato et m&eacute;caniques Gotoh ainsi que des SP Custom Heatcrusher+ SC 62'. Boutons et placages micros en black limba.<\/p>",
+        "files": [
+            {
+                "filename_disk": "541d211b-2a3d-42ff-ad34-677591b03c8c.JPG"
+            },
+            {
+                "filename_disk": "707ed6f5-0533-443b-8b3a-6220fad176d0.JPG"
+            },
+            {
+                "filename_disk": "cbd70df5-95f0-4335-9bc6-9c3938f74d2d.JPG"
+            },
+            {
+                "filename_disk": "58c92d2f-6393-40d6-9dc6-47875f25c004.JPG"
+            },
+            {
+                "filename_disk": "4bbfa58b-de01-4d10-bdb2-d0516495d085.JPG"
+            },
+            {
+                "filename_disk": "a8ab63d4-22fe-49e3-8714-8b9157af21b2.JPG"
+            }
+        ]
+    },
+    {
+        "title": "<p>MARS <strong>6<\/strong> CUSTOM<\/p>",
+        "description": "<p>Une table en loupe de peuplier avec un burst translucide noir sur un corps en black limba avec un manche en pau ferro surmont&eacute; d'une touche en z&eacute;brano. Chevalet hipshot ainsi que des SP Custom Chaosland + Smockey club 62'.<\/p>",
+        "files": [
+            {
+                "filename_disk": "02dc10b7-380f-4a06-9b2c-c0e13fd3a2a2.JPG"
+            },
+            {
+                "filename_disk": "ac2ab1c6-688d-4900-b44c-62d6d46946e0.JPG"
+            },
+            {
+                "filename_disk": "8735ff7f-76e0-45cb-ac95-dfcf4678280e.JPG"
+            }
+        ]
+    },
+    {
+        "title": "<p>Saturne <strong>Hyp&eacute;rion <\/strong>Custom<\/p>",
+        "description": "<p>Une table en &eacute;rable pommel&eacute; teint&eacute;e en bleue sur un corps en aulne avec un manche en &eacute;rable ond&eacute; surmont&eacute; d'une touche en &eacute;rable mouchet&eacute; en bleu clair. Chevalet et m&eacute;caniques hipshot ainsi que des SP Custom Savage Beast.<\/p>",
+        "files": [
+            {
+                "filename_disk": "ffb2b91e-fb99-475e-ae22-6f0a7615fab0.JPG"
+            },
+            {
+                "filename_disk": "a97e0341-08c9-4ee3-8232-42c2fb108df0.JPG"
+            },
+            {
+                "filename_disk": "06522354-14b1-48bb-84ce-d54e732c40c2.JPG"
+            },
+            {
+                "filename_disk": "94b9afc2-1f78-4ec5-bf8a-d8f7302ab524.JPG"
+            }
+        ]
+    },
+    {
+        "title": "<p>MARS <strong>7<\/strong> CUSTOM <a href=\"https:\/\/etrange.bandcamp.com\/\" target=\"_blank\" rel=\"noopener\">ETRANGE<\/a> BAND<\/p>",
+        "description": "<p>Une table en noyer sur un corps en aulne d&eacute;color&eacute; avec un manche en &eacute;rable ond&eacute; surmont&eacute; d'une touche en cormier ond&eacute;. Chevalet hipshot ainsi que des SP Custom Chaosland.<\/p>\n<p>Bouton en noyer et gravure <a href=\"https:\/\/etrange.bandcamp.com\/\" target=\"_blank\" rel=\"noreferrer noopener\">ETRANGE<\/a>.<\/p>",
+        "files": [
+            {
+                "filename_disk": "d6d04512-2729-4eeb-8b8d-682d57ee8994.JPG"
+            },
+            {
+                "filename_disk": "5cbdea48-f8bc-47ba-9019-64b19ccb93fd.JPG"
+            },
+            {
+                "filename_disk": "9ddcf5b1-7591-431b-b2eb-bc4c2321a654.JPG"
+            },
+            {
+                "filename_disk": "da07412d-9630-4b67-a522-d132a8a6f399.JPG"
+            }
+        ]
+    },
+    {
+        "title": "<p>MARS <strong>7<\/strong> DIALECTICAL <strong>MATERIALISM<\/strong> PROJECT<\/p>",
+        "description": "<p>Un couple de Mars 7 pour un concept musical de metal progressif instrumental.<\/p>",
+        "files": [
+            {
+                "filename_disk": "9161e5b8-34ca-49ab-bc61-b9c818de4fbb.JPG"
+            },
+            {
+                "filename_disk": "deddd3b7-ea8a-41dc-804e-07c7f89dcd76.JPG"
+            },
+            {
+                "filename_disk": "47e05f4a-c03e-4281-baa7-b907186e91c0.JPG"
+            },
+            {
+                "filename_disk": "5ccab19e-247c-49c0-bd51-a8eb580cafa1.JPG"
+            },
+            {
+                "filename_disk": "4ac14fdb-5e3b-4d03-b3ba-1c9682306db9.JPG"
+            },
+            {
+                "filename_disk": "2f2358c6-ecd3-4d54-9824-186c987221ea.JPG"
+            },
+            {
+                "filename_disk": "818c8558-c970-4f6b-a994-00c80b77a182.JPG"
+            },
+            {
+                "filename_disk": "b54b83b6-afd9-4e40-b010-4cd4de4a8e99.JPG"
+            }
+        ]
+    },
+    {
+        "title": "<p>V&eacute;nus&nbsp;<strong>STD<\/strong><\/p>",
+        "description": "<p>Une table en noyer &eacute;chauff&eacute; sur un corps en samba avec un manche en &eacute;rable surmont&eacute; d'une touche en ziricote. Vibrato et m&eacute;caniques Gotoh ainsi que des Di Marzio Igno et Dominion.<\/p>",
+        "files": [
+            {
+                "filename_disk": "5e2d48ff-6bc1-4af6-baf7-b5a945fbbfe1.JPG"
+            },
+            {
+                "filename_disk": "66b7afff-4624-432d-bed6-d106a162e9eb.JPG"
+            },
+            {
+                "filename_disk": "b4b9a16c-6702-49d0-95dc-b797cbf3ca44.JPG"
+            },
+            {
+                "filename_disk": "02cce6f5-3aaa-4ab6-8749-66cd7844048f.JPG"
+            }
+        ]
+    },
+    {
+        "title": "<p>V&eacute;nus&nbsp;<strong>Custom<\/strong><\/p>",
+        "description": "<p>Une table en weng&eacute; sur un corps en black limba avec un manche en weng&eacute; surmont&eacute; d'une touche en &eacute;b&egrave;ne blanc. Chevalet Hipshot et m&eacute;caniques Gotoh ainsi que des SP Custom Heat Crusher et Smockey club 62.<\/p>\n<p>&nbsp;<\/p>",
+        "files": [
+            {
+                "filename_disk": "4d54fbe1-806e-4bae-a9b9-041fb7219adf.JPG"
+            },
+            {
+                "filename_disk": "f9273136-94a6-4dc2-9130-8305f11f5a76.JPG"
+            },
+            {
+                "filename_disk": "e9d62933-f57e-47bc-bea2-d0949cf406e7.JPG"
+            },
+            {
+                "filename_disk": "1e4e5f4c-2b8c-42ea-a50a-762f8f5c706f.JPG"
+            }
+        ]
+    },
+    {
+        "title": "<p>Mars&nbsp;<strong>6<\/strong><\/p>",
+        "description": "<p>Une table en noyer sur un corps en aulne d&eacute;color&eacute; avec un manche en &eacute;rable ond&eacute; surmont&eacute; d'une touche en poirier. Chevalet Tan Bridge ainsi que des SP Custom Chaosland et Origin 58.<\/p>\n<p>Elle a rejoint <a href=\"https:\/\/open.spotify.com\/intl-fr\/artist\/1aOOIc5iXEeL1lvMAnORSS\" target=\"_blank\" rel=\"noopener\">Valentin<\/a><\/p>",
+        "files": [
+            {
+                "filename_disk": "1eca46df-f251-44c3-9656-635b1e8ef854.JPG"
+            },
+            {
+                "filename_disk": "9d0a4f8a-6fa2-43fd-bde5-3a35bb6e2782.JPG"
+            },
+            {
+                "filename_disk": "ca8a8570-4f62-4b18-8313-d4c3088bcada.JPG"
+            },
+            {
+                "filename_disk": "e209e174-428e-4d20-8ed7-372b6c72472a.JPG"
+            },
+            {
+                "filename_disk": "b580068b-dba6-402b-8c95-4237912fe59b.JPG"
+            }
+        ]
+    },
+    {
+        "title": "<p>V&eacute;nus<\/p>",
+        "description": "<p>Une table en fr&ecirc;ne ond&eacute; sur un corps en noyer avec un manche en &eacute;rable surmont&eacute; d'une touche en bubinga. Chevalet et m&eacute;caniques Gotoh ainsi que des Di Marzio.<\/p>",
+        "files": [
+            {
+                "filename_disk": "9cc4575f-61c0-4414-a36b-befaaff32ea9.JPG"
+            },
+            {
+                "filename_disk": "667ac3dd-ae46-47ec-bbb5-0bae742c380e.JPG"
+            },
+            {
+                "filename_disk": "c6d92de9-3d86-45bc-8c60-f79294bad9c8.JPG"
+            },
+            {
+                "filename_disk": "a135f853-cf7f-4db1-93a2-6070a975dab4.JPG"
+            },
+            {
+                "filename_disk": "b2201c28-bfe6-4e2c-9ff3-5cd1fb73a189.JPG"
+            }
+        ]
+    },
+    {
+        "title": "<p>SATURNE <strong>HYPERION<\/strong> CUSTOM<\/p>",
+        "description": "<p>Un corps en aulne surmont&eacute; d'un magnifique placage &eacute;rable ond&eacute; teint&eacute; \"type Spectral L&rarr;F\". Elle poss&egrave;de un manche en &eacute;rable ond&eacute; ainsi qu'une touche en palissandre. Elle est &eacute;quip&eacute; d'un accastillage Gotoh pour le vibrato et les m&eacute;caniques &agrave; blocages, munie de deux humbuckers SP Custom chaosland en chevalet + Origin 59 en manche.<\/p>\n<p>Elle a rejoint N&eacute;o - Guitariste : <a href=\"https:\/\/www.youtube.com\/watch?v=8TI5lzJaAOo&amp;t=75s\" target=\"_blank\" rel=\"noopener\">https:\/\/www.youtube.com\/watch?v=8TI5lzJaAOo&amp;t=75s<\/a><\/p>",
+        "files": [
+            {
+                "filename_disk": "907881fa-b4b2-456b-b210-2e056ecdbb18.webp"
+            },
+            {
+                "filename_disk": "e29395b9-00c2-4a47-a889-963fdccc1734.webp"
+            },
+            {
+                "filename_disk": "c9617228-f685-4ac8-bc27-baddbb4130cd.webp"
+            },
+            {
+                "filename_disk": "b4ac9fe3-a5e6-4b03-9c14-2b5b67e1b50f.webp"
+            },
+            {
+                "filename_disk": "cd05d9eb-1afb-44d6-9008-4e52e5e4bf23.webp"
+            },
+            {
+                "filename_disk": "27e7c2a1-33bb-484c-bbf8-b208eae3dacb.webp"
+            },
+            {
+                "filename_disk": "cbbe22f5-6ef6-42f7-89fd-61f651f2325d.webp"
+            }
+        ]
+    },
+    {
+        "title": "<p>SATURNE <strong>HYPERION<\/strong> CUSTOM<\/p>",
+        "description": "<p>Un cops en aulne peinture \"Desert Sand\" &nbsp;avec un manche en &eacute;rable ond&eacute; surmont&eacute; d'une touche en &eacute;b&egrave;ne exotique. &nbsp;Vibrato et m&eacute;caniques Gotoh ainsi que des SP Custom Heatcrusher + Origin 59. <\/p>",
+        "files": [
+            {
+                "filename_disk": "e96189ba-1bed-41d2-9b7f-0ddb1e82f6b5.JPG"
+            },
+            {
+                "filename_disk": "aae9cc0e-10d4-4543-8c9e-46b7549cde0b.JPG"
+            },
+            {
+                "filename_disk": "26c04546-c280-41ba-8b9c-af3bca54209a.JPG"
+            },
+            {
+                "filename_disk": "9c734f5c-cebe-4609-9d72-031f6f9c3a4d.JPG"
+            },
+            {
+                "filename_disk": "ff4fcc39-afee-46c6-bc69-407efc53f1f9.JPG"
+            },
+            {
+                "filename_disk": "18e85f98-b089-451a-9b80-87dd979d0c44.JPG"
+            },
+            {
+                "filename_disk": "1fbdec8d-38e7-4277-89a3-5848d8fb9b9d.JPG"
+            }
+        ]
+    },
+    {
+        "title": "<p>MARS <strong>6 <\/strong>PICKGUARD<\/p>",
+        "description": "<p>La toute premi&egrave;re MARS dot&eacute;e d'un pickguard en &eacute;rable &eacute;chauff&eacute;, ainsi qu'un placage en eucalyptus fris&eacute; fum&eacute; sur un corps en Fr&ecirc;ne des Marais avec un manche en &eacute;rable ond&eacute; surmont&eacute; d'une touche en Ziricote. Chevalet Hipshot et headpieces Riviera ainsi que des SP Custom - Chaosland en chevalet et Boomleecher en manche.<\/p>",
+        "files": [
+            {
+                "filename_disk": "80a8fb56-27c9-42b8-8920-882d1a247456.JPG"
+            },
+            {
+                "filename_disk": "d60e006b-9f2d-489f-a2bb-f05c1acb9dcf.JPG"
+            },
+            {
+                "filename_disk": "0be00e17-05df-4a56-b749-6a38ee3e1752.JPG"
+            },
+            {
+                "filename_disk": "f0609ea8-ecdb-4dc8-b7ec-766b89cc82cb.JPG"
+            },
+            {
+                "filename_disk": "e6fac789-e93b-4928-9eb1-a776bed6103e.JPG"
+            },
+            {
+                "filename_disk": "7723e3de-3c89-46ee-98ff-f799062c8ab3.JPG"
+            }
+        ]
+    },
+    {
+        "title": "<p>SATURNE <strong>HYPERION<\/strong> CUSTOM<\/p>",
+        "description": "<p>Un top peinture black satin&eacute;&nbsp; sur un corps en black malvina avec un manche en black limba surmont&eacute; d'une touche en &eacute;b&egrave;ne. Vibrato et m&eacute;caniques Gotoh ainsi que des SP Custom Railcrusher + SC 65'. <\/p>\n<p>Elle a rejoint<a href=\"https:\/\/www.facebook.com\/p\/Anthony-Magloire-la-Gr%C3%A8ve-100063756240216\/?locale=fr_FR\" target=\"_blank\" rel=\"noopener\"> Anthony Magloire La Gr&egrave;ve&nbsp;<\/a><\/p>",
+        "files": [
+            {
+                "filename_disk": "72aa7d1b-8174-4c14-a798-a546f726360f.JPG"
+            },
+            {
+                "filename_disk": "822c8b07-fdda-476b-85d2-f059533255ae.JPG"
+            },
+            {
+                "filename_disk": "73db59d9-851f-4f27-b976-315418a9b0ca.JPG"
+            },
+            {
+                "filename_disk": "e5ad3b1b-dd4e-4618-a3a2-6c87b711f7bd.JPG"
+            },
+            {
+                "filename_disk": "3ad0ab3a-3694-4c77-b556-77055866f0cf.JPG"
+            },
+            {
+                "filename_disk": "5ccc8d5f-a9b3-4e23-99d0-32cee213f39f.JPG"
+            },
+            {
+                "filename_disk": "b2cbf1db-06f4-454b-869e-a6b93c835e5e.JPG"
+            },
+            {
+                "filename_disk": "1107795d-3743-48ed-8b60-5dcabcad95f2.jpeg"
+            },
+            {
+                "filename_disk": "15c9ae19-bd15-48a2-9a9a-0c8bf8f377dd.jpeg"
+            }
+        ]
+    },
+    {
+        "title": "<p>SATURNE <strong>HYPERION<\/strong> CUSTOM<\/p>",
+        "description": "<p>Un magnifique top en Noyer &eacute;chauff&eacute; &nbsp;sur un corps en white limba avec un manche en &eacute;rable torr&eacute;fi&eacute; surmont&eacute; d'une touche en ziricote. Vibrato et m&eacute;caniques Gotoh dor&eacute;s ainsi que des micros SP Custom Chaosland + SC Nash. &nbsp;<\/p>\n<p>&nbsp;<\/p>",
+        "files": [
+            {
+                "filename_disk": "04590117-0efa-497e-b35f-2938673d7d0c.JPG"
+            },
+            {
+                "filename_disk": "bce2cebe-fb29-4393-9c3c-dd7916b4562c.jpg"
+            },
+            {
+                "filename_disk": "d07d616a-2a60-4ece-8cda-e256e159ab9a.JPG"
+            },
+            {
+                "filename_disk": "77058a6e-b7f2-4029-be2b-99fc86b55ed7.JPG"
+            },
+            {
+                "filename_disk": "ff49eeb3-132e-4069-b5ed-00c2215ebdef.JPG"
+            },
+            {
+                "filename_disk": "a48b7e1f-1f87-4011-9a85-0b0a1116f3df.JPG"
+            },
+            {
+                "filename_disk": "294cecdc-f655-4b49-a7dd-985c53a73228.JPG"
+            },
+            {
+                "filename_disk": "d656c96b-e55f-4353-857c-59fd1b406b79.JPG"
+            },
+            {
+                "filename_disk": "60f5273f-4c0b-46f8-93d0-d35d365d5c66.JPG"
+            },
+            {
+                "filename_disk": "bfa71592-c34c-4797-92e0-bc0c3d20d7af.JPG"
+            }
+        ]
+    },
+    {
+        "title": "<p>SATURNE <strong>TITAN <\/strong>CUSTOM<\/p>",
+        "description": "<p>Un corps en aulne avec une table en peuplier ond&eacute; teint&eacute;. Le manche est en &eacute;rable ond&eacute; torr&eacute;fi&eacute; surmont&eacute; d'une touche en &eacute;rable &eacute;galement ond&eacute; torr&eacute;fi&eacute; ainsi un liser&eacute; de d&eacute;coration en &eacute;b&egrave;ne. Cette Titant est &eacute;quip&eacute;e d'un vibrato et m&eacute;caniques Gotoh ainsi que des Seymour Duncan Nazgul + Sentient.<\/p>\n<p>Elle a rejoint <a href=\"https:\/\/www.youtube.com\/@jefonyx\" target=\"_blank\" rel=\"noopener\">Jefonyx <\/a>qui a r&eacute;alis&eacute; un test sur sa chaine Youtube : <a href=\"https:\/\/www.youtube.com\/watch?v=LS7dq_VYbJI&amp;t=81s\" target=\"_blank\" rel=\"noopener\">https:\/\/www.youtube.com\/watch?v=LS7dq_VYbJI&amp;t=81s<\/a><\/p>",
+        "files": [
+            {
+                "filename_disk": "cceb97ce-f319-4d75-aa74-0ca54f6a0d46.JPG"
+            },
+            {
+                "filename_disk": "51455dc0-cf47-40e9-9c8b-77aa9ac5af94.JPG"
+            },
+            {
+                "filename_disk": "a0dac66f-c2c0-44bf-92ad-2ee950c66486.JPG"
+            },
+            {
+                "filename_disk": "1f1cf1e6-9932-469f-9fe9-fb9b82a6caf8.JPG"
+            },
+            {
+                "filename_disk": "00ec8adb-9a41-47de-84b2-6fc1f4693eda.JPG"
+            },
+            {
+                "filename_disk": "590f92bf-c7ae-4037-9b63-1d526bea57b5.JPG"
+            },
+            {
+                "filename_disk": "be3eff65-d00a-4730-b67e-18189a789990.JPG"
+            },
+            {
+                "filename_disk": "382740ea-73b2-4bb8-b182-7b7f49bbe321.JPG"
+            }
+        ]
+    }
+]
